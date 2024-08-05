@@ -42,6 +42,12 @@ let daysOfWeek = {
 };
   console.log(daysOfWeek[lang]);
 
-  
-        
+// задание 2 через тернарные операторы
+let namePerson = prompt("Введите имя:")
+let role = (namePerson === "Артём") ? "директор" : (namePerson === "Александр") ? "преподаватель" : "студент";
+console.log(role);
+
+
+
+
 
