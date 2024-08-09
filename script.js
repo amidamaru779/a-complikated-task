@@ -1,16 +1,20 @@
-// Создаем переменную num со значением 266219
-let num = 266219;
+'use strict'
 
-// Умножаем цифры числа
-let multiplication = 1;
-while (num > 0) {
-    multiplication *= num % 10;
-    num = Math.floor(num / 10);
-} console.log(multiplication);
+const userInput = prompt("Пожалуйста введите 30 любых символов","")
+const txt = function(arg) {
+    
+    if (typeof arg !== "string") {
+        return "Пожалуйста введите строку"
+    }  
+    const trimArg = arg.trim();
+    if (trimArg.length > 30) {
+        return trimArg.slice(0,31) + "..." 
+    }
+    return trimArg
+    
+}
+console.log(txt(userInput));
 
-// Возводим результат в степень 3
- let result = multiplication ** 3 
 
-// Первые две цифры числа
-let firstTwoDigits = result.toString()
-console.log(firstTwoDigits.slice(0,2));
+
+
