@@ -1,74 +1,59 @@
-<<<<<<< HEAD
-// Создаем переменную num со значением 266219
-let num = 266219;
-
-// Умножаем цифры числа
-let multiplication = 1;
-while (num > 0) {
-    multiplication *= num % 10;
-    num = Math.floor(num / 10);
-} console.log(multiplication);
-
-// Возводим результат в степень 3
- let result = multiplication ** 3 
-
-// Первые две цифры числа
-let firstTwoDigits = result.toString()
-console.log(firstTwoDigits.slice(0,2));
-=======
 'use strict';
 
-// через if 
-let lang = prompt('На каком языке вы хотите увидеть дни недели?', 'ru,en');
-let russianDaysOfTheWeek = "Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье";
-let englishDaysOfTheWeek = "Monday, Thuesday, Wednesday, Thurday, Friday, Saturday, Sunday";
+/* Пояснение кода:
+- Создал массив.
+- Создал функцию, в которой через цикл for создал условие: пока i меньше длинны строки массива она увеличивается на 1.
+- Далее выполняется проверка, что каждый первый индекс элемента массива равен 2 или 4. 
+- Если элемент массива подходит под проверку, то он и выводится.
+- Дальше просто вызываю функцию с параметром arr(созданный ранее массив)
+*/
 
-if (lang === "ru") {
-    console.log(russianDaysOfTheWeek);
-} else if (lang === "en") {
-    console.log(englishDaysOfTheWeek);
-} else {
-    console.log("Неизвестный язык");
-}
+let arr = ["2345", "6784", "4357", "8341", "23456", "42134", "7465"];
 
-// через switch
-switch (lang) {
-    case "ru":
-        console.log(russianDaysOfTheWeek);
-        break
-    case "en":
-        console.log(englishDaysOfTheWeek);
-        break
-    default:
-        console.log("Неизвестный язык");
-}
-        
-// switch второй вариант
-switch (true) {
-    case lang === "ru":
-        console.log(russianDaysOfTheWeek);
-        break
-    case lang === "en":
-        console.log(englishDaysOfTheWeek);
-        break
-    default:
-        console.log("Неизвестный язык");
-}
-
-// без if и switch
-let daysOfWeek = {
-    ru: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
-  en: ['Monday', 'Tuesday', 'Wednesday', 'Thueday', 'Friday', 'Saturday', 'Sunday']
+const firstDigit = function (num) {
+    for (let i = 0; i < num.length; i++){
+        if (num[i][0] === "2" || num[i][0] === "4"){
+            console.log(num[i]);      
+        }
+    } 
 };
-  console.log(daysOfWeek[lang]);
+firstDigit(arr)
 
-// задание 2 через тернарные операторы
-let namePerson = prompt("Введите имя:")
-let role = (namePerson === "Артём") ? "директор" : (namePerson === "Александр") ? "преподаватель" : "студент";
-console.log(role);
+/* Создал функцию 
+ Через for задал условие (так как простое число не может быть 1, начальной точкой будет 2), что пока i меньше либо равно 100,счётчик увеличивается на 1
+ Создаю переменную флажок true (пока условие истино)
+ Через вложенный for задаю условие, что пока j меньше либо равно квадратному корню из i, счётчик увеличивается на 1
+ Делаю проверку если остаток от деления равен 0 то утверждение ложь и проверка прекращается
+ Если флажок будет истинной, то в консоль выводится простое число и его 2 делителя
+*/
+
+const primeNumber = function () {
+    for (let i =2; i <= 100; i++) {
+        let isPrime = true;
+        for (let j = 2; j <= Math.sqrt(i); j++) {
+          if (i % j === 0) {
+            isPrime = false;
+            break;
+          }
+        }
+        if (isPrime === true) {
+            console.log(i + " (Делители: 1 и " + i + ")");
+        }
+      }
+}
+primeNumber()
 
 
 
 
 
->>>>>>> lesson03
+
+
+
+
+
+
+
+
+
+
